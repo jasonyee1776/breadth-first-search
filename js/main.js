@@ -80,6 +80,22 @@ var adjList = [
 
 var bfsInfo = bfsSearch(adjList, 3);
 
-for (var i = 0; i < adjList.length; i++) {
-    console.log(`Vertex ${i}: distance = ${bfsInfo[i].distance}, predecessor = ${bfsInfo[i].predecessor}`);
-}
+// for (var i = 0; i < adjList.length; i++) {
+//     console.log(`Vertex ${i}: distance = ${bfsInfo[i].distance}, predecessor = ${bfsInfo[i].predecessor}`);
+// }
+
+var button = document.querySelector('button');
+var input = document.querySelector('input');
+var displayResults = document.querySelector('h2');
+
+button.addEventListener('click', function() {
+    // displayResults.innerHTML += `${input.value} <br>`
+    for (var i = 0; i < adjList.length; i++) {
+        displayResults.innerHTML += ` <br>
+            Vertex ${i}: distance = ${bfsInfo[i].distance}, predecessor = ${bfsInfo[i].predecessor} 
+            `
+    }
+})
+
+
+
